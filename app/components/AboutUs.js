@@ -2,6 +2,7 @@
 import React from "react";
 import Counter from "./Counter";
 import Image from 'next/image'
+import Image from 'next/image'
 
 export default function AboutUs() {
   return (
@@ -65,13 +66,15 @@ export default function AboutUs() {
         <div className="ceo-profiles">
           <div className="ceo-card">
             <Image
-              src="/butt.jpeg"
+              src="/favicon.ico.jpeg"
               alt="John Doe"
               className="ceo-image"
               height={150}
               width={150}
+              height={150}
+              width={150}
             />
-            <h3 className="ceo-name">Abdullah Butt</h3>
+            <h3 className="ceo-name">Abdullah Khalil</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
   Abdullah Butt is a seasoned leader with over 7 years of experience in BPO management and operations, driving Echo-Forge BPO to achieve international excellence and recognition.
@@ -83,14 +86,17 @@ export default function AboutUs() {
             </div> */}
           </div>
 
-          {/* <div className="ceo-card">
+          <div className="ceo-card">
             <Image
               src="/favicon.ico.jpeg"
               alt="Jane Smith"
               className="ceo-image"
               height={150}
               width={150}
+              height={150}
+              width={150}
             />
+            <h3 className="ceo-name">Gul Faraz</h3>
             <h3 className="ceo-name">Gul Faraz</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
