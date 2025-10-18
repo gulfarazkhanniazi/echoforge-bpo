@@ -179,22 +179,22 @@ header {
   width: 100%;
   height: 100%;
   filter: grayscale(20%);
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_640.jpg");
+  background-image: url("https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg?cs=srgb&dl=pexels-yankrukov-8867482.jpg&fm=jpg");
   background-size: cover;
   background-position: center;
 }
 .slider-wrapper .slider-item:nth-child(2):before {
-  background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-fall-nature-free-wallpaper-download-autumn-lake-evening-free-image.jpeg?w=600&quality=80");
+  background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FsbCUyMGN");
 }
 .slider-wrapper .slider-item:nth-child(3):before {
-  background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-fall-nature-free-wallpaper-download-autumn-lake-evening-free-image.jpeg?w=600&quality=80");
+  background-image: url("https://png.pngtree.com/background/20230427/original/pngtree-an-empty-office-with-people-working-on-computers-picture-image_2495630.jpg");
 }
 .slider-wrapper .slider-item:nth-child(4):before {
   filter: grayscale(25%) brightness(80%);
-  background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-fall-nature-free-wallpaper-download-autumn-lake-evening-free-image.jpeg?w=600&quality=80");
+  background-image: url("https://images.pexels.com/photos/8867262/pexels-photo-8867262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 .slider-wrapper .slider-item:nth-child(5):before {
-  background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/amazing-fall-nature-free-wallpaper-download-autumn-lake-evening-free-image.jpeg?w=600&quality=80");
+  background-image: url("https://images.unsplash.com/photo-1564069114553-7215e1ff1890?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI1fHx8ZW58MHx8fHx8");
 }
 .slider-wrapper .slider-item .slide-content {
   position: relative;
@@ -939,6 +939,7 @@ header {
 /* /////////////////////////////         Job Apply Page          ///////////////////////////////// */
 .apply-section {
   background: var(--bg-color);
+  min-height: 95vh;
   color: var(--text-color);
   padding: 60px 6%;
   padding-top: 8rem;

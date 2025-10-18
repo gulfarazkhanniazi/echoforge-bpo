@@ -6,53 +6,35 @@ export default function ApplyJob({ slug }) {
   const [errors, setErrors] = useState({});
 
   const jobData = {
-  "closer": {
-    title: "Closer",
-    workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
-    location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
-    description:
-      "We are hiring experienced Closers to manage and finalize sales deals with international clients. The ideal candidate should be confident, persuasive, and results-driven, with excellent communication and negotiation skills. You will play a key role in building client relationships and achieving company sales goals in a fast-paced professional environment.",
-    responsibilities: [
-      "Engage with international prospects and convert them into clients.",
-      "Negotiate and close deals effectively to meet or exceed sales targets.",
-      "Maintain positive relationships with existing clients to encourage repeat business.",
-      "Collaborate with the sales team to develop and refine closing strategies.",
-      "Maintain accurate records of communications, leads, and deals.",
-    ],
-    requirements: [
-      "Minimum 2 years of relevant experience in sales or closing.",
-      "Fluent in spoken and written English.",
-      "Strong computer skills and ability to use CRM or communication tools.",
-      "Excellent negotiation, communication, and interpersonal skills.",
-      "Both male and female candidates can apply.",
-      "Free transport facility available for female employees.",
-    ],
-  },
-
-  "customer-sales-representative": {
-    title: "Customer Sales Representative",
-    workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
-    location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
-    description:
-      "We are looking for dedicated and enthusiastic Customer Sales Representatives to handle customer interactions, promote services, and drive successful conversions. The ideal candidate should have excellent English communication skills, a customer-focused approach, and the ability to work efficiently in a dynamic environment.",
-    responsibilities: [
-      "Communicate with potential and existing customers to promote company services.",
-      "Identify customer needs and provide appropriate solutions and information.",
-      "Achieve daily and monthly sales targets consistently.",
-      "Maintain customer databases and ensure accurate follow-ups.",
-      "Work collaboratively with the team to improve overall sales performance.",
-    ],
-    requirements: [
-      "Minimum 2 years of experience in sales, marketing, or customer service.",
-      "Fluent English communication skills (spoken and written).",
-      "Good computer literacy and familiarity with CRM tools.",
-      "Strong interpersonal and persuasion skills.",
-      "Both male and female candidates can apply.",
-      "Free transport facility available for female employees.",
-    ],
-  },
-};
-
+    closer: {
+      title: "Closer",
+      workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
+      location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
+      description:
+        "We are hiring experienced Closers to manage and finalize sales deals with international clients.",
+      requirements: [
+        "Minimum 2 years of relevant experience in sales or closing.",
+        "Fluent in spoken and written English.",
+        "Strong computer skills and ability to use CRM or communication tools.",
+        "Both male and female candidates can apply.",
+        "Free transport facility available for female employees.",
+      ],
+    },
+    "customer-sales-representative": {
+      title: "Customer Sales Representative",
+      workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
+      location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
+      description:
+        "We are looking for dedicated Customer Sales Representatives to handle customer interactions.",
+      requirements: [
+        "Minimum 2 years of experience in sales, marketing, or customer service.",
+        "Fluent English communication skills (spoken and written).",
+        "Good computer literacy and familiarity with CRM tools.",
+        "Both male and female candidates can apply.",
+        "Free transport facility available for female employees.",
+      ],
+    },
+  };
 
   const job = jobData[slug];
   if (!job) return <h2 className="error-text">Job not found.</h2>;
@@ -63,17 +45,13 @@ export default function ApplyJob({ slug }) {
     const name = formData.get("name")?.trim();
     const email = formData.get("email")?.trim();
     const phone = formData.get("phone")?.trim();
-    const coverletter = formData.get("coverletter")?.trim();
     const cv = formData.get("cv");
 
     if (!name || !/^[a-zA-Z\s]+$/.test(name)) {
       newErrors.name = "Enter a valid name (letters only).";
     }
 
-    if (
-      !email ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-    ) {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Enter a valid email address.";
     }
 
@@ -81,21 +59,13 @@ export default function ApplyJob({ slug }) {
       newErrors.phone = "Enter a valid phone number (10–15 digits).";
     }
 
-    if (!coverletter || coverletter.length < 20) {
-      newErrors.coverletter = "Cover letter must be at least 20 characters.";
-    }
-
-    if (!cv || cv.size === 0) {
-      newErrors.cv = "Please upload your CV.";
-    } else if (
-      !["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"].includes(
-        cv.type
-      )
-    ) {
+    if (cv && cv.size > 0) {
+    if (!["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"].includes(cv.type)) {
       newErrors.cv = "Only PDF, DOC, or DOCX files are allowed.";
     } else if (cv.size > 5 * 1024 * 1024) {
       newErrors.cv = "File size must be under 5MB.";
     }
+  }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -105,10 +75,9 @@ export default function ApplyJob({ slug }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    formData.append("jobTitle", job.title);
 
-    if (!validateForm(formData)) {
-      return; // Stop if validation fails
-    }
+    if (!validateForm(formData)) return;
 
     setLoading(true);
 
@@ -137,22 +106,19 @@ export default function ApplyJob({ slug }) {
   return (
     <section className="apply-section">
       <div className="apply-container">
-        {/* ---------- LEFT: Job Details ---------- */}
+        {/* Job Info */}
         <div className="job-info">
           <h2>{job.title}</h2>
           <p><strong>Working Hours:</strong> {job.workingHours}</p>
-          <p><strong>Job Location:</strong> {job.location}</p>
+          <p><strong>Location:</strong> {job.location}</p>
           <p className="desc"><strong>Description:</strong> {job.description}</p>
-
           <h3>Requirements:</h3>
           <ul>
-            {job?.requirements?.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
+            {job.requirements.map((req, i) => <li key={i}>{req}</li>)}
           </ul>
         </div>
 
-        {/* ---------- RIGHT: Apply Form ---------- */}
+        {/* Apply Form */}
         <div className="apply-form">
           <h3>Apply Now</h3>
           <form onSubmit={handleSubmit} noValidate>
@@ -175,15 +141,7 @@ export default function ApplyJob({ slug }) {
             </label>
 
             <label>
-              Statement / Cover Letter
-              <textarea name="coverletter" rows="4"></textarea>
-              {errors.coverletter && (
-                <p className="error-text">{errors.coverletter}</p>
-              )}
-            </label>
-
-            <label>
-              Upload CV
+              Upload CV (optional)
               <input type="file" name="cv" accept=".pdf,.doc,.docx" />
               {errors.cv && <p className="error-text">{errors.cv}</p>}
             </label>

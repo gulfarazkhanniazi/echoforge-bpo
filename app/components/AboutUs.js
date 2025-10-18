@@ -65,25 +65,25 @@ export default function AboutUs() {
         <div className="ceo-profiles">
           <div className="ceo-card">
             <Image
-              src="/favicon.ico.jpeg"
+              src="/butt.jpeg"
               alt="John Doe"
               className="ceo-image"
               height={150}
               width={150}
             />
-            <h3 className="ceo-name">Abdullah Khalil</h3>
+            <h3 className="ceo-name">Abdullah Butt</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
-              John brings over 15 years of experience in BPO management and
-              operations, leading Echo-Forge BPO to international recognition.
-            </p>
+  Abdullah Butt is a seasoned leader with over 7 years of experience in BPO management and operations, driving Echo-Forge BPO to achieve international excellence and recognition.
+</p>
+
             {/* <div className="ceo-socials">
               <a href="#" className="ceo-social-link">LinkedIn</a>
               <a href="#" className="ceo-social-link">Twitter</a>
             </div> */}
           </div>
 
-          <div className="ceo-card">
+          {/* <div className="ceo-card">
             <Image
               src="/favicon.ico.jpeg"
               alt="Jane Smith"
@@ -97,11 +97,11 @@ export default function AboutUs() {
               Jane oversees strategic growth and client success, ensuring
               exceptional service delivery and operational excellence.
             </p>
-            {/* <div className="ceo-socials">
+            <div className="ceo-socials">
               <a href="#" className="ceo-social-link">LinkedIn</a>
               <a href="#" className="ceo-social-link">Twitter</a>
-            </div> */}
-          </div>
+            </div>
+          </div> */}
         </div>
       </div>
       <Counter />

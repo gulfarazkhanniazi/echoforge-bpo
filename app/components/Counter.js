@@ -29,7 +29,7 @@ export default function Counter() {
         <div className="box">
           <div className="icon"><FaHeadset /></div>
           <div className="counter">
-            {startCount && <CountUp end={250000} duration={4} separator="," />}
+            {startCount && <CountUp end={250000} duration={2} separator="," />}
           </div>
           <div className="text">Customer Interactions Handled</div>
         </div>
@@ -37,7 +37,7 @@ export default function Counter() {
         <div className="box">
           <div className="icon"><FaHandshake /></div>
           <div className="counter">
-            {startCount && <CountUp end={320} duration={4} />}
+            {startCount && <CountUp end={2000} duration={2} />}
           </div>
           <div className="text">Global Clients Served</div>
         </div>
@@ -45,7 +45,7 @@ export default function Counter() {
         <div className="box">
           <div className="icon"><FaUsers /></div>
           <div className="counter">
-            {startCount && <CountUp end={1500} duration={4} />}
+            {startCount && <CountUp end={1500} duration={2} />}
           </div>
           <div className="text">Dedicated Professionals</div>
         </div>
@@ -53,7 +53,7 @@ export default function Counter() {
         <div className="box">
           <div className="icon"><FaChartLine /></div>
           <div className="counter">
-            {startCount && <CountUp end={98} duration={4} />}%
+            {startCount && <CountUp end={98} duration={2} />}%
           </div>
           <div className="text">Client Satisfaction Rate</div>
         </div>
