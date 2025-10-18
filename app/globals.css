@@ -404,13 +404,12 @@ header {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 60px;
 }
 
 /* Section Header */
 .about-header {
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .section-title {
@@ -479,6 +478,7 @@ header {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .ceo-card {
@@ -578,7 +578,7 @@ header {
 
 @media (max-width: 768px) {
   .about-us-section {
-    padding: 60px 15px;
+    padding: 10px 15px;
   }
   .ceo-profiles {
     flex-direction: column;
@@ -1214,7 +1214,7 @@ header {
 
 @media (max-width: 480px) {
   .services-section {
-    padding: 60px 15px;
+    padding: 10px 15px;
   }
 
   .section-title {
