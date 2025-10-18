@@ -5,7 +5,7 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <Navbar />

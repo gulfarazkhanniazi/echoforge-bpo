@@ -3,8 +3,8 @@ import Footer from '@/app/components/Footer'
 import Navbar from '@/app/components/Navbar'
 import React from 'react'
 
-export default function page({ params }) {
-  const { slug } = React.use(params);
+export default function Page({ params }) {
+  const { slug } = params;
   return (
     <>
     <Navbar />

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Counter from "./Counter";
+import Image from 'next/image'
 
 export default function AboutUs() {
   return (
@@ -63,12 +64,14 @@ export default function AboutUs() {
         {/* CEO Profiles */}
         <div className="ceo-profiles">
           <div className="ceo-card">
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
+            <Image
+              src="/favicon.ico.jpeg"
               alt="John Doe"
               className="ceo-image"
+              height={150}
+              width={150}
             />
-            <h3 className="ceo-name">John Doe</h3>
+            <h3 className="ceo-name">Abdullah Khalil</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
               John brings over 15 years of experience in BPO management and
@@ -81,12 +84,14 @@ export default function AboutUs() {
           </div>
 
           <div className="ceo-card">
-            <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
+            <Image
+              src="/favicon.ico.jpeg"
               alt="Jane Smith"
               className="ceo-image"
+              height={150}
+              width={150}
             />
-            <h3 className="ceo-name">Jane Smith</h3>
+            <h3 className="ceo-name">Gul Faraz</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
               Jane oversees strategic growth and client success, ensuring
