@@ -95,7 +95,7 @@ export default function ContactUs() {
               <FaEnvelope className="c-icon" size={30} />
               <div className="topic">Email</div>
               <div className="text-one">dflora794@gmail.com</div>
-              <div className="text-two">info.codinglab@gmail.com</div>
+              {/* <div className="text-two">info.codinglab@gmail.com</div> */}
             </div>
           </div>
 
