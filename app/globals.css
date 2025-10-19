@@ -743,7 +743,6 @@ header {
 }
 
 /* //////////////////////////////          Footer        ///////////////////////////////////// */
-
 .footer {
   background-color: var(--bg-color);
   color: #fff;
@@ -751,15 +750,51 @@ header {
   font-family: 'Arial', sans-serif;
 }
 
-.footer-bottom {
-  text-align: center;
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+}
+
+/* WhatsApp Icon */
+.footer-icon.whatsapp {
+  color: #25D366;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon.whatsapp:hover {
+  transform: translateY(-3px) scale(1.15);
+  filter: brightness(1.3);
+}
+
+/* Instagram Gradient */
+.footer-icon.instagram {
+  color: #d62976;
+  /* background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icon.instagram:hover {
+  transform: translateY(-3px) scale(1.15);
+  filter: brightness(1.2);
 }
 
 .footer-bottom hr {
   border: none;
   border-top: 1px solid var(--hover-color);
-  margin-bottom: 10px;
+  margin: 10px auto;
+
 }
+
+
 
 /* ///////////////////////           Counter                 ////////////////////////////// */
 
