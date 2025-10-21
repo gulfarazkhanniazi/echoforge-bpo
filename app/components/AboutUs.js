@@ -2,7 +2,6 @@
 import React from "react";
 import Counter from "./Counter";
 import Image from "next/image";
-import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -66,7 +65,7 @@ export default function AboutUs() {
         <div className="ceo-profiles">
           <div className="ceo-card">
             <Image
-              src="/favicon.ico.jpeg"
+              src="/butt.jpeg"
               alt="John Doe"
               className="ceo-image"
               height={150}
@@ -85,30 +84,6 @@ export default function AboutUs() {
               <a href="#" className="ceo-social-link">Twitter</a>
             </div> */}
           </div>
-          <div className="ceo-card">
-            <Image
-              src="/favicon.ico.jpeg"
-              alt="Jane Smith"
-              className="ceo-image"
-              height={150}
-              width={150}
-            />
-            <h3 className="ceo-name">Gul Faraz</h3>
-            <h3 className="ceo-name">Gul Faraz</h3>
-            <p className="ceo-title">CEO & Co-Founder</p>
-            <p>
-              Jane oversees strategic growth and client success, ensuring
-              exceptional service delivery and operational excellence.
-            </p>
-            <div className="ceo-socials">
-              <a href="#" className="ceo-social-link">
-                LinkedIn
-              </a>
-              <a href="#" className="ceo-social-link">
-                Twitter
-              </a>
-            </div>
-          </div>{" "}
         </div>
       </div>
       <Counter />
