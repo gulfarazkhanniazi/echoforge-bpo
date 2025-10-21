@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Counter from "./Counter";
-import Image from 'next/image'
-import Image from 'next/image'
+import Image from "next/image";
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -71,28 +71,25 @@ export default function AboutUs() {
               className="ceo-image"
               height={150}
               width={150}
-              height={150}
-              width={150}
             />
             <h3 className="ceo-name">Abdullah Khalil</h3>
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
-  Abdullah Butt is a seasoned leader with over 7 years of experience in BPO management and operations, driving Echo-Forge BPO to achieve international excellence and recognition.
-</p>
+              Abdullah Butt is a seasoned leader with over 7 years of experience
+              in BPO management and operations, driving Echo-Forge BPO to
+              achieve international excellence and recognition.
+            </p>
 
             {/* <div className="ceo-socials">
               <a href="#" className="ceo-social-link">LinkedIn</a>
               <a href="#" className="ceo-social-link">Twitter</a>
             </div> */}
           </div>
-
           <div className="ceo-card">
             <Image
               src="/favicon.ico.jpeg"
               alt="Jane Smith"
               className="ceo-image"
-              height={150}
-              width={150}
               height={150}
               width={150}
             />
@@ -104,10 +101,14 @@ export default function AboutUs() {
               exceptional service delivery and operational excellence.
             </p>
             <div className="ceo-socials">
-              <a href="#" className="ceo-social-link">LinkedIn</a>
-              <a href="#" className="ceo-social-link">Twitter</a>
+              <a href="#" className="ceo-social-link">
+                LinkedIn
+              </a>
+              <a href="#" className="ceo-social-link">
+                Twitter
+              </a>
             </div>
-          </div> */}
+          </div>{" "}
         </div>
       </div>
       <Counter />
