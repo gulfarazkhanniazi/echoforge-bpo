@@ -4,4 +4,6 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/404'],
+  outDir: './public',
+  sourceDir: './.next',
 };

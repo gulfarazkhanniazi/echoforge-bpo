@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.echoforgebpo.com/
+Host: https://www.echoforgebpo.com
 
 # Sitemaps
 Sitemap: https://www.echoforgebpo.com/sitemap.xml
