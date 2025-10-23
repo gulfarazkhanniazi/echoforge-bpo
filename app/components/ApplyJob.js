@@ -91,14 +91,14 @@ export default function ApplyJob({ slug }) {
       const data = await response.json();
 
       if (data.success) {
-        toast.success("✅ Application submitted successfully!");
+        toast.success("Application submitted successfully!");
         e.target.reset();
       } else {
-        toast.error("❌ Failed to send application. Try again.");
+        toast.error("Failed to send application. Try again.");
       }
     } catch (error) {
       console.error("Error sending application:", error);
-      toast.error("⚠️ Something went wrong. Please try again later.");
+      toast.error("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
