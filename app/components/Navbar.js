@@ -21,7 +21,7 @@ export default function Navbar() {
 
         <Link href="/" className="logo">
           {/* <img src="images/logo.jpg" alt="logo" /> */}
-          <h2>Echo-Forge BPO</h2>
+          <h2>EchoForge BPO</h2>
         </Link>
 
         <ul className={`links ${menuOpen ? "show-menu" : ""}`}>

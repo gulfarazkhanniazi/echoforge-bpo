@@ -79,7 +79,7 @@ export default function HeroSection() {
       subtitle: "Global Expertise",
       title: "Delivering seamless business solutions worldwide",
       description:
-        "Echo-Forge BPO empowers businesses by providing scalable and efficient process outsourcing solutions tailored to your needs.",
+        "EchoForge BPO empowers businesses by providing scalable and efficient process outsourcing solutions tailored to your needs.",
     },
     {
       subtitle: "Customer-Centric Approach",
@@ -97,7 +97,7 @@ export default function HeroSection() {
       subtitle: "Trusted Partnership",
       title: "Building long-term relationships with clients",
       description:
-        "At Echo-Forge BPO, we prioritize collaboration and transparency, fostering trust and mutual growth.",
+        "At EchoForge BPO, we prioritize collaboration and transparency, fostering trust and mutual growth.",
     },
     {
       subtitle: "Scalable Solutions",

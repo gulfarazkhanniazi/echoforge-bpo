@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <hr />
         <div className="footer-content">
-          <p>© {new Date().getFullYear()} Echo-Forge BPO. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} EchoForge BPO. All rights reserved.</p>
           <div className="footer-icons">
             <a
               href="https://wa.me/17194838574"

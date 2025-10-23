@@ -20,7 +20,7 @@ export default function AboutUs() {
         <div className="company-info">
           <h3 className="company-title">Who We Are</h3>
           <p className="company-description">
-            Echo-Forge BPO is a premier business process outsourcing company
+            EchoForge BPO is a premier business process outsourcing company
             dedicated to delivering high-quality, scalable, and innovative
             solutions to clients worldwide. With a focus on operational
             excellence, cutting-edge technology, and client-centric services, we
@@ -75,7 +75,7 @@ export default function AboutUs() {
             <p className="ceo-title">CEO & Co-Founder</p>
             <p>
               Abdullah Butt is a seasoned leader with over 7 years of experience
-              in BPO management and operations, driving Echo-Forge BPO to
+              in BPO management and operations, driving EchoForge BPO to
               achieve international excellence and recognition.
             </p>
 

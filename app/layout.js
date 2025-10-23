@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Echo-Forge BPO",
+  title: "EchoForge BPO",
   description: "Professional BPO services",
   icons: {
     icon: "/favicon.ico.jpeg",
