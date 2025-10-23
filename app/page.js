@@ -5,9 +5,22 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function Page() {
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
+
       <Navbar />
       <HeroSection />
       <AboutUs />
@@ -15,5 +28,5 @@ export default function Page() {
       <ContatcUs />
       <Footer />
     </>
-  )
+  );
 }

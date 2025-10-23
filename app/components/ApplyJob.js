@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function ApplyJob({ slug }) {
   const [loading, setLoading] = useState(false);
@@ -90,14 +91,14 @@ export default function ApplyJob({ slug }) {
       const data = await response.json();
 
       if (data.success) {
-        alert("✅ Application submitted successfully!");
+        toast.success("✅ Application submitted successfully!");
         e.target.reset();
       } else {
-        alert("❌ Failed to send application. Try again.");
+        toast.error("❌ Failed to send application. Try again.");
       }
     } catch (error) {
       console.error("Error sending application:", error);
-      alert("⚠️ Something went wrong. Please try again later.");
+      toast.error("⚠️ Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }

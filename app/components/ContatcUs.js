@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 export default function ContactUs() {
   const [form, setForm] = useState({
@@ -22,13 +23,13 @@ export default function ContactUs() {
     const { name, email, message } = form;
 
     if (!name.trim() || !email.trim() || !message.trim()) {
-      alert("⚠️ Please fill in all fields.");
+      toast.warn("⚠️ Please fill in all fields.");
       return false;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
-      alert("⚠️ Please enter a valid email address.");
+      toast.warn("⚠️ Please enter a valid email address.");
       return false;
     }
 
@@ -58,14 +59,14 @@ export default function ContactUs() {
       const data = await res.json();
 
       if (data.success) {
-        alert("✅ Your message has been sent successfully!");
+        toast.success("✅ Your message has been sent successfully!");
         setForm({ name: "", email: "", message: "" });
       } else {
-        alert("❌ Failed to send your message. Please try again later.");
+        toast.error("❌ Failed to send your message. Please try again later.");
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
-      alert("⚠️ Something went wrong. Please try again.");
+      toast.warn("⚠️ Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
