@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
+
 export default function ApplyJob({ slug }) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
