@@ -1,0 +1,32 @@
+import AboutUs from "./components/AboutUs";
+import ContatcUs from "./components/ContatcUs";
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
+import Services from "./components/Services";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function Page() {
+  return (
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        theme="colored"
+      />
+
+      <Navbar />
+      <HeroSection />
+      <AboutUs />
+      <Services />
+      <ContatcUs />
+      <Footer />
+    </>
+  );
+}
