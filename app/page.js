@@ -8,6 +8,14 @@ import Services from "./components/Services";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+export const metadata = {
+  title: "EchoForge BPO",
+  description: "Join EchoForge BPO — explore job opportunities today.",
+  alternates: {
+    canonical: "https://www.echoforgebpo.com/",
+  },
+};
+
 export default function Page() {
   return (
     <>

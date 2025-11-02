@@ -10,6 +10,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `Apply for ${jobTitle} at EchoForge BPO`,
     description: `Apply for the ${jobTitle} position at EchoForge BPO. Join our dynamic team and build your career today.`,
+    alternates: {
+      canonical: `https://www.echoforgebpo.com/jobs/apply/${slug}`,
+    },
   };
 }
 
