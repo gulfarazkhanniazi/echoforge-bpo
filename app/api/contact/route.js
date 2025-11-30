@@ -33,7 +33,7 @@ export async function POST(req) {
           <div style="padding:30px;">
             <p style="font-size:16px;color:#333;">Hello Team,</p>
             <p style="font-size:15px;color:#555;line-height:1.6;">
-              You’ve received a new message from your website’s contact form. Here are the details:
+              You’ve received a new message from EchoForge BPO contact form. Here are the details:
             </p>
 
             <table style="width:100%;border-collapse:collapse;margin:20px 0;">
@@ -66,7 +66,7 @@ export async function POST(req) {
           </div>
 
           <div style="background:#f1f1f1;padding:15px;text-align:center;font-size:13px;color:#666;">
-            © ${new Date().getFullYear()} BPO Company | Contact Form Notification
+            © ${new Date().getFullYear()} EchoForge BPO | Contact Form Notification
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export async function POST(req) {
     const mailOptions = {
       from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.RECEIVER_EMAIL,
-      subject: `📩 New Message from ${name} - ${subject}`,
+      subject: `📩 New Message from EchoForge BPO`,
       html: htmlContent,
       replyTo: email,
     };
