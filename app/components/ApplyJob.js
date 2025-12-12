@@ -1,76 +1,55 @@
 "use client";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { jobData } from "../data/jobs";
 
+import { z } from "zod";
+
+const applySchema = z.object({
+  name: z.string().min(2, "Enter a valid name (letters only)."),
+  email: z.string().email("Enter a valid email address."),
+  phone: z.string().regex(/^\d{10,15}$/, "Enter a valid phone number (10–15 digits)."),
+  cv: z
+    .any()
+    .refine((file) => {
+      if (!file || file.size === 0) return true; // Optional
+      return ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"].includes(file.type);
+    }, "Only PDF, DOC, or DOCX files are allowed.")
+    .refine((file) => {
+      if (!file || file.size === 0) return true; // Optional
+      return file.size <= 5 * 1024 * 1024;
+    }, "File size must be under 5MB."),
+});
 
 export default function ApplyJob({ slug }) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-
-  const jobData = {
-    closer: {
-      title: "Closer",
-      workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
-      location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
-      description:
-        "We are hiring experienced Closers to manage and finalize sales deals with international clients.",
-      requirements: [
-        "Minimum 2 years of relevant experience in sales or closing.",
-        "Fluent in spoken and written English.",
-        "Strong computer skills and ability to use CRM or communication tools.",
-        "Both male and female candidates can apply.",
-        "Free transport facility available for female employees.",
-      ],
-    },
-    "customer-sales-representative": {
-      title: "Customer Sales Representative",
-      workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
-      location: "Range Road, Main Shally Valley Chowk, Rawalpindi",
-      description:
-        "We are looking for dedicated Customer Sales Representatives to handle customer interactions.",
-      requirements: [
-        "Minimum 2 years of experience in sales, marketing, or customer service.",
-        "Fluent English communication skills (spoken and written).",
-        "Good computer literacy and familiarity with CRM tools.",
-        "Both male and female candidates can apply.",
-        "Free transport facility available for female employees.",
-      ],
-    },
-  };
 
   const job = jobData[slug];
   if (!job) return <h2 className="error-text">Job not found.</h2>;
 
   // ✅ Validation function
   const validateForm = (formData) => {
-    const newErrors = {};
-    const name = formData.get("name")?.trim();
-    const email = formData.get("email")?.trim();
-    const phone = formData.get("phone")?.trim();
-    const cv = formData.get("cv");
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      cv: formData.get("cv"),
+    };
 
-    if (!name || !/^[a-zA-Z\s]+$/.test(name)) {
-      newErrors.name = "Enter a valid name (letters only).";
+    const result = applySchema.safeParse(data);
+
+    if (!result.success) {
+      const newErrors = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) newErrors[err.path[0]] = err.message;
+      });
+      setErrors(newErrors);
+      return false;
     }
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Enter a valid email address.";
-    }
-
-    if (!phone || !/^\d{10,15}$/.test(phone)) {
-      newErrors.phone = "Enter a valid phone number (10–15 digits).";
-    }
-
-    if (cv && cv.size > 0) {
-    if (!["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"].includes(cv.type)) {
-      newErrors.cv = "Only PDF, DOC, or DOCX files are allowed.";
-    } else if (cv.size > 5 * 1024 * 1024) {
-      newErrors.cv = "File size must be under 5MB.";
-    }
-  }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   // 📨 Form submission

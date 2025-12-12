@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { z } from "zod";
 import { toast } from "react-toastify";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters long"),
+});
 
 export default function ContactUs() {
   const [form, setForm] = useState({
@@ -20,19 +27,13 @@ export default function ContactUs() {
 
   // ✅ Validation helper
   const validateForm = () => {
-    const { name, email, message } = form;
-
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      toast.warn("Please fill in all fields.");
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      // Show the first error
+      const firstError = result.error.errors[0];
+      toast.warn(firstError.message);
       return false;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      toast.warn("Please enter a valid email address.");
-      return false;
-    }
-
     return true;
   };
 

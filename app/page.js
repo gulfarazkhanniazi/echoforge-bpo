@@ -1,5 +1,5 @@
 import AboutUs from "./components/AboutUs";
-import ContatcUs from "./components/ContatcUs";
+import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -33,7 +33,7 @@ export default function Page() {
       <HeroSection />
       <AboutUs />
       <Services />
-      <ContatcUs />
+      <ContactUs />
       <Footer />
     </>
   );
