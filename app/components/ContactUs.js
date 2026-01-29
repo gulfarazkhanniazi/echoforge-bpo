@@ -82,21 +82,21 @@ export default function ContactUs() {
             <div className="address details">
               <FaMapMarkerAlt className="c-icon" size={30} />
               <div className="topic">Address</div>
-              <div className="text-one">Range Road, Main Shally</div>
-              <div className="text-two">Valley Chowk, Rawalpindi</div>
+              <div className="text-one">Plaza 28, Lower Ground, Civic Center</div>
+              <div className="text-two">Bahria Phase IV, Islamabad</div>
             </div>
 
             <div className="phone details">
               <FaPhoneAlt className="c-icon" size={30} />
               <div className="topic">Phone</div>
-              <div className="text-one">+1 (719) 483-8574</div>
-              <div className="text-two">+92 333 0766413</div>
+              <div className="text-one">+92 333 0766413</div>
+              <div className="text-two">+92 313 5053395</div>
             </div>
 
             <div className="email details">
               <FaEnvelope className="c-icon" size={30} />
               <div className="topic">Email</div>
-              <div className="text-one">dflora794@gmail.com</div>
+              <div className="text-one">echoforge7793@gmail.com</div>
               {/* <div className="text-two">info.codinglab@gmail.com</div> */}
             </div>
           </div>

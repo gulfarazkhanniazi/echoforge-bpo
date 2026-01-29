@@ -41,8 +41,8 @@ export default function ApplyJob({ slug }) {
 
     if (!result.success) {
       const newErrors = {};
-      result.error.errors.forEach((err) => {
-        if (err.path[0]) newErrors[err.path[0]] = err.message;
+      result?.error?.errors?.forEach((err) => {
+        if (err?.path[0]) newErrors[err?.path[0]] = err.message;
       });
       setErrors(newErrors);
       return false;

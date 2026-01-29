@@ -27,4 +27,18 @@ export const jobData = {
             "Free transport facility available for female employees.",
         ],
     },
+    verifiers: {
+        title: "Verifiers",
+        workingHours: "Night Shift - 8:00 pm to 5:00 am (Monday to Friday)",
+        location: "Plaza 28, Lower Ground, Civic Center, Bahria Phase IV, Islamabad",
+        description:
+            "We are looking for dedicated Verifiers to handle customer interactions.",
+        requirements: [
+            "Minimum 2 years of experience in sales, marketing, or customer service.",
+            "Fluent English communication skills (spoken and written).",
+            "Good computer literacy and familiarity with CRM tools.",
+            "Both male and female candidates can apply.",
+            "Free transport facility available for female employees.",
+        ],
+    },
 };
