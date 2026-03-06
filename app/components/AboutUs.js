@@ -66,17 +66,36 @@ export default function AboutUs() {
           <div className="ceo-card">
             <Image
               src="/butt.jpeg"
-              alt="John Doe"
+              alt="Abdullah Khalil"
               className="ceo-image"
               height={150}
               width={150}
             />
             <h3 className="ceo-name">Abdullah Khalil</h3>
-            <p className="ceo-title">CEO & Co-Founder</p>
-            <p>
+            <p className="ceo-title">CEO</p>
+            <p className="ceo-p">
               Abdullah Butt is a seasoned leader with over 7 years of experience
               in BPO management and operations, driving EchoForge BPO to
               achieve international excellence and recognition.
+            </p>
+
+            {/* <div className="ceo-socials">
+              <a href="#" className="ceo-social-link">LinkedIn</a>
+              <a href="#" className="ceo-social-link">Twitter</a>
+            </div> */}
+          </div>
+          <div className="ceo-card">
+            <Image style={{objectFit: "cover", objectPosition: "top"}}
+              src="/awaiis.jpeg"
+              alt="Awais Choudhary"
+              className="ceo-image"
+              height={150}
+              width={150}
+            />
+            <h3 className="ceo-name">Awais Choudhary</h3>
+            <p className="ceo-title"> Co-Founder</p>
+            <p className="ceo-p">
+              Awais Choudhary is a dedicated Co-Founder who helps drive the company’s vision, contributing to strategic growth, innovation, and long-term success.
             </p>
 
             {/* <div className="ceo-socials">

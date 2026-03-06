@@ -535,6 +535,10 @@ header {
 .ceo-social-link:hover {
   color: var(--primary-color);
 }
+.ceo-p{
+  text-align: justify;
+  hyphens: auto;
+}
 
 @media (max-width: 1024px) {
   .company-values {
